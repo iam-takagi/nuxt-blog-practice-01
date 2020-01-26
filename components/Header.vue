@@ -4,6 +4,11 @@
       <div class="logo-wrapper">
         <nuxt-link to="/" class="brand-name">MC Tech Portal JP</nuxt-link>
       </div>
+      <div id="nav-icon4">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <nav id="header-nav">
         <ul >
           <li><nuxt-link to="/">Home</nuxt-link></li>
@@ -137,7 +142,6 @@
       }
     }
   }
-
   /*
   @media screen and (max-width: 768px) {
     #header {
