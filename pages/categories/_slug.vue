@@ -1,48 +1,55 @@
 <template>
-  <div>
-    <header class="tag-page header">
-      <div class="foreground">
-        <div class="page-bar wrapper">
-          <a href="/" class="person-name">John Doe</a>
-        </div>
-        <div class="page-info wrapper">
-          <h2>#{{ category }}</h2>
-        </div>
-      </div>
-    </header>
+  <div class="container">
 
-    <section class="body-container">
-      <div class="items-bar wrapper">
-        <h2>All articles category #{{ category }} ({{ posts.length }})</h2>
-      </div>
-      <ul class="items-list wrapper">
-        <li class="item" v-for="post in posts">
-          <ArticlePreview :post="post"></ArticlePreview>
-        </li>
-      </ul>
-    </section>
+    <div class="contents">
+      <h1 class="heading">カテゴリ: {{category}} に関する記事</h1>
+    </div>
+
+    <ul class="contents">
+
+      <li class="cards_item" v-for="post in postsByCategory(category)">
+
+        <nuxt-link :to="linkTo('posts', post.fields.slug)">
+          <div class="card">
+            <div class="card_image">
+              <img :src="post.fields.heroImage.fields.file.url + '?fit=scale&w=1024&h=512'"/>
+              <nuxt-link :to="linkTo('categories', post.fields.category)" class="category_btn">{{post.fields.category}}</nuxt-link>
+            </div>
+            <div class="card_content">
+               <span style="color: #47494e">
+                  <font-awesome-icon icon="calendar" style="font-size: 15px"/> {{ new Date(post.fields.publishDate) | format-date }}
+               </span>
+              <h2 class="card_title">{{ post.fields.title }}</h2>
+              <p class="card_text">{{ post.fields.description.substring(0, 80) }}</p>
+              <nuxt-link v-for="tag in post.fields.tags" :key="tag" :to="linkTo('tags', tag)" class="tag_btn">{{ tag }}</nuxt-link>
+            </div>
+          </div>
+
+        </nuxt-link>
+      </li>
+
+    </ul>
+
   </div>
 </template>
 
 <script>
-    import {createClient} from '~/plugins/contentful.js'
-    import ArticlePreview from '~/components/ArticlePreview.vue'
-    const client = createClient()
+    import { mapState, mapGetters } from 'vuex'
+
     export default {
-        asyncData ({ env, params }) {
-            return client.getEntries({
-                'content_type': env.CTF_BLOG_POST_TYPE_ID,
-                'fields.category[in]': params.category,
-                order: '-sys.createdAt'
-            }).then(entries => {
-                return {
-                    posts: entries.items,
-                    category: params.category
-                }
-            })
+        middleware: 'getContentful',
+        async asyncData( { params, error }) {
+            return {
+                category: params.slug
+            }
         },
-        components: {
-            ArticlePreview
+        computed: {
+            ...mapGetters(['linkTo']),
+            ...mapGetters(['postsByCategory'])
         }
     }
 </script>
+
+<style scoped>
+
+</style>

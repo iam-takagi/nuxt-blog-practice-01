@@ -5,11 +5,9 @@
         <nuxt-link to="/" class="brand-name">MC Tech Portal JP</nuxt-link>
       </div>
       <nav id="header-nav">
-        <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="">Posts</a></li>
-          <li><a href="">Categories</a></li>
-          <li><a href="">Tags</a></li>
+        <ul >
+          <li><nuxt-link to="/">Home</nuxt-link></li>
+          <li><nuxt-link to="/posts/pages/1">Posts</nuxt-link></li>
         </ul>
       </nav>
     </div>
@@ -140,6 +138,7 @@
     }
   }
 
+  /*
   @media screen and (max-width: 768px) {
     #header {
       height: 60px;
@@ -269,5 +268,8 @@
       }
     }
   }
+
+   */
+
 
 </style>

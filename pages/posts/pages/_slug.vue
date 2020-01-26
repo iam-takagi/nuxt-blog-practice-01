@@ -1,12 +1,15 @@
 <template>
-  <div>
+  <div class="container">
 
-    <section>
+    <div class="contents">
+      <h1 class="heading">全ての記事</h1>
+    </div>
 
-      <ul class="cards">
+    <ul class="contents">
 
-        <li class="cards_item" v-for="post in getCurrentPagePosts">
+      <li class="cards_item" v-for="post in getCurrentPagePosts">
 
+        <nuxt-link :to="linkTo('posts', post.fields.slug)">
           <div class="card">
             <div class="card_image">
               <img :src="post.fields.heroImage.fields.file.url + '?fit=scale&w=1024&h=512'"/>
@@ -20,37 +23,29 @@
               <p class="card_text">{{ post.fields.description.substring(0, 80) }}</p>
               <nuxt-link v-for="tag in post.fields.tags" :key="tag" :to="linkTo('tags', tag)" class="tag_btn">{{ tag }}</nuxt-link>
             </div>
-            <nuxt-link :to="linkTo('posts', post.fields.slug)" class="read_button">この記事を読む</nuxt-link>
           </div>
-        </li>
 
-      </ul>
+        </nuxt-link>
+      </li>
 
-    </section>
+    </ul>
 
-      <p>
-        現在のページ: {{currentPage}}
-      </p>
-
-      <p>
-        合計ページ: {{getPageCount}}
-      </p>
-
-    <nuxt-link v-show="hasPrev" :to = "'/posts/pages/' + getPrev">
-      前のページ
-    </nuxt-link>
+    <div class="contents">
+      <nuxt-link v-show="hasPrev" class="btn" :to = "'/posts/pages/' + getPrev">
+        前のページ
+      </nuxt-link>
 
 
-    <nuxt-link v-show="hasNext" :to = "'/posts/pages/' + getNext">
-      次のページ
-    </nuxt-link>
+      <nuxt-link v-show="hasNext" class="btn" :to = "'/posts/pages/' + getNext">
+        次のページ
+      </nuxt-link>
+    </div>
 
   </div>
 </template>
 
 <script>
     import { mapState, mapGetters } from 'vuex'
-
 
     export default {
         middleware: 'getContentful',

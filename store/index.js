@@ -3,11 +3,9 @@ import {createClient} from '../plugins/contentful'
 
 export const state = () => ({
   posts: [],
-  categories: [],
-  tags: []
-})
-
-const parPage = 10;
+  tags: [],
+  categories: []
+});
 
 export const getters = {
   setEyeCatch: () => (post) => {
@@ -23,21 +21,23 @@ export const getters = {
     return { name: `${name}-slug`, params: { slug: slug } }
   },
 
-  postsByCategory: state => (category) => {
+  postsByCategory: state => (currentCategory) => {
     const posts = []
     for (let i = 0; i < state.posts.length; i++) {
-      const catId = state.posts[i].fields.category.sys.id
-      if (category.sys.id === catId) posts.push(state.posts[i])
+      const post = state.posts[i]
+      if (currentCategory === post.fields.category) posts.push(post)
     }
     return posts
   },
 
-  postsByTag: state => (tag) => {
+  postsByTag: state => (currentTag) => {
     const posts = []
     for (let i = 0; i < state.posts.length; i++) {
       const post = state.posts[i]
+
       if (post.fields.tags) {
-        const tag = post.fields.tags.find(tag => tag.sys.id === tag.sys.id)
+
+        const tag = post.fields.tags.find(tag => tag === currentTag)
 
         if (tag) posts.push(post)
       }
@@ -55,15 +55,39 @@ export const mutations = {
     state.posts = payload
   },
 
-  setLinks(state, entries) {
-    state.tags = []
-    state.categories = []
+  async setLinks(state, entries) {
+    state.categories = [];
+    state.tags = [];
+
     for (let i = 0; i < entries.length; i++) {
-      const entry = entries[i]
-      if (entry.sys.contentType.sys.id === 'tags') state.tags.push(entry)
-      else if (entry.sys.contentType.sys.id === 'category') state.categories.push(entry)
+      const entry = entries[i];
+
+      const category = entry.fields.category;
+      if (category !== null && category !== undefined) {
+        const categoryString = String(category);
+        if (!state.categories.includes(categoryString)) {
+          state.categories.push(categoryString)
+        }
+      }
+
+      const tags = [entry.fields.tags];
+
+      tags.map(tag => {
+        if (tag !== null && category !== tag) {
+          const tagString = String(tag);
+          const split = tagString.split(",");
+          split.map(splitTag => {
+            if (!state.tags.includes(splitTag)) {
+              state.tags.push(splitTag)
+            }
+          })
+        }
+      })
+
+      console.log(state.tags)
     }
-    state.categories.sort((a, b) => a.fields.sort - b.fields.sort)
+
+
   }
 }
 
