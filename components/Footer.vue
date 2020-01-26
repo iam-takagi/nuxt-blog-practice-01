@@ -1,26 +1,35 @@
 <template>
   <footer>
-    <div class="main">
-
-    </div>
+      <div v-for="(category, i) in categories" :key="i" class="main">
+        <nuxt-link :to="linkTo('categories', category)" style="color: white">
+          {{ category }}
+        </nuxt-link>
+      </div>
   </footer>
 </template>
 
 <script>
+
+    import { mapState, mapGetters } from 'vuex'
+
     export default {
-        name: "Footer"
+        name: "Footer",
+        middleware: 'getContentful',
+        computed: {
+            ...mapState(['categories']),
+            ...mapGetters(['linkTo'])
+        }
     }
 </script>
 
 <style scoped>
   footer {
     width: 100%;
-    position:absolute;
+    position: absolute;
   }
 
   .main {
-    height: 100%;
-    background: #7f828b;
+    background: gray;
   }
 
 </style>

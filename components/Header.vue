@@ -1,13 +1,8 @@
 <template>
   <header id="header">
     <div class="nav-wrapper">
-      <div id="header-trigger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
       <div class="logo-wrapper">
-        <h1 class="brand-name">MC TECH</h1>
+        <nuxt-link to="/" class="brand-name">MC Tech Portal JP</nuxt-link>
       </div>
       <nav id="header-nav">
         <ul>
@@ -30,9 +25,6 @@
 <style scoped lang = "scss">
 
   #header {
-    position: relative;
-    top: 0;
-    left: 0;
     height: 80px;
     width: 100%;
     background: white;
@@ -42,11 +34,10 @@
       height: 100%;
       padding: 0 15px;
       line-height: 80px;
-      .logo-wrapper {
 
+      .logo-wrapper {
         float: left;
         height: 62px;
-        margin-top: 10px;
 
         .brand-logo {
           height: 100%;
@@ -55,12 +46,13 @@
         .brand-name {
           font-family: 'Varela Round';
           font-size: 1.7em;
-          vertical-align: middle;
           font-weight: 700;
           color: rgba(0, 0, 0, .7);
           cursor: pointer;
+          text-decoration: none!important;
           &:hover {
             color: rgba(0, 0, 0, .9);
+            text-decoration: none!important;
           }
         }
       }
@@ -115,6 +107,7 @@
                 transition: all 0.3s;
                 z-index: 456456;
               }
+
               &::after {
                 top: -2px;
                 left: -8px;
@@ -150,18 +143,90 @@
   @media screen and (max-width: 768px) {
     #header {
       height: 60px;
+
       .nav-wrapper {
+
+        #closebtn {
+          height:25px;
+          width:25px;
+          text-decoration:none;
+          font-size: 36px !important;
+          z-index:100;
+          color:#fff;
+          cursor:pointer;
+          trainsition:background-position .3s;
+        }
+
+        .line1, .line2, .line3 {
+          margin-top:5px;
+          background-color: #181818;
+          width:25px;
+          height:3px;
+          display:block;
+          position:relative;
+          opacity:1.0;
+          border-radius:15%;
+          transition: all .3s;
+        }
+
+        .line1.active {
+          transform: rotate(270deg);
+          opacity:0.0;
+          background-color:yellow;
+          top:5px;
+        }
+
+        .line2.active {
+          transform: rotate(45deg);
+          background-color:yellow;
+        }
+
+        .line3.active {
+          transform: rotate(-45deg);
+          background-color:yellow;
+          top:-7px;
+        }
+
+        .menuitems {
+          padding-top:12px;
+          padding-bottom:12px;
+          text-decoration: none;
+          list-style:none;
+          font-family: "Lato", sans-serif;
+          font-weight: 300;
+          font-size: 24px;
+          display: inline-block;
+          position:relative;
+          text-align:center;
+          color: #fff;
+          opacity:0.0;
+          transition: all .5s ease-in-out;
+        }
+
+        .menuitems:after {
+          content:'';
+          display:block;
+          width: 0;
+          height: 1px;
+          background: #fff;
+          transition: width .2s;
+        }
+
+        .menuitems:hover::after {
+          width:100%;
+        }
+
         #header-trigger {
           display: inline-block;
           &:hover {
             background: rgba(149, 165, 166, 1.0);
           }
         }
+
         .logo-wrapper {
-          height: 50px;
-          margin-top: 5px;
+          line-height: 60px;
           .brand-name {
-            font-size: 1.35em;
+            font-size: 1.4em;
           }
         }
         #header-trigger {
@@ -172,6 +237,7 @@
           border-radius: 12px;
           padding-top: 4px;
         }
+
         nav {
           display: none;
           float: none;
