@@ -73,7 +73,7 @@ export const mutations = {
       const tags = [entry.fields.tags];
 
       tags.map(tag => {
-        if (tag !== null && category !== tag) {
+        if (tag !== null && tag !== undefined) {
           const tagString = String(tag);
           const split = tagString.split(",");
           split.map(splitTag => {
@@ -82,11 +82,10 @@ export const mutations = {
             }
           })
         }
-      })
+      });
 
       console.log(state.tags)
     }
-
 
   }
 }

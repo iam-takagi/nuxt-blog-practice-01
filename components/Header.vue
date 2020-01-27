@@ -1,279 +1,178 @@
 <template>
   <header id="header">
-    <div class="nav-wrapper">
-      <div class="logo-wrapper">
-        <nuxt-link to="/" class="brand-name">MC Tech Portal JP</nuxt-link>
-      </div>
-      <div id="nav-icon4">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <nav id="header-nav">
-        <ul >
-          <li><nuxt-link to="/">Home</nuxt-link></li>
-          <li><nuxt-link to="/posts/pages/1">Posts</nuxt-link></li>
-        </ul>
-      </nav>
+
+    <div class="logo-wrapper">
+      <nuxt-link to="/" class="brand-name">Minecraft Tech Portal JP</nuxt-link>
     </div>
+
+    <div class="hamburger-wrapper">
+      <div class="hamburger" id="hamburger-1">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+
+    <nav class="slidedown">
+      <ul class="menu">
+        <li><nuxt-link to="/" class="item no-decoration">Home</nuxt-link></li>
+        <li><nuxt-link to="/posts/pages/1" class="item no-decoration">All Posts</nuxt-link></li>
+      </ul>
+    </nav>
+
   </header>
+
 </template>
 
 <script>
+
+  import $ from 'jquery'
+
     export default {
         name: "Header"
     }
+
+    if(process.browser){
+        $(document).ready(function(){
+            $(".hamburger").click(function(){
+                $(this).toggleClass("is-active");
+                $('.slidedown').slideToggle();
+            });
+        });
+    }
+
 </script>
 
 <style scoped lang = "scss">
 
+  @import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:700&display=swap');
+
+  .slidedown {
+    display: none;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  ul li {
+    list-style: none;
+    text-align: center;
+  }
+
+  .menu{
+    width: 100%;
+    display: inline;
+
+    .item{
+      font-size: 20px;
+      display: block;
+      background: #3094b8;
+      padding: 10px;
+      color: #fff;
+      text-decoration: none;
+      box-sizsing: border-box;
+      width: 100%;
+      height: 45px;
+      line-height: 40px;
+    }
+  }
   #header {
     height: 80px;
     width: 100%;
-    background: white;
-    z-index: 1000;
+    //max-width: 1200px;
+    margin: 0 auto;
+    background: #3094b8;
+    z-index: 3;
+    //border-radius: 0 0 1em 1em;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    -webkit-flex-flow: row wrap;
 
-    .nav-wrapper {
-      height: 100%;
-      padding: 0 15px;
-      line-height: 80px;
+    .hamburger-wrapper {
 
-      .logo-wrapper {
-        float: left;
-        height: 62px;
+      margin-right: 20%;
 
-        .brand-logo {
-          height: 100%;
-          border-radius: 50%;
-        }
-        .brand-name {
-          font-family: 'Varela Round';
-          font-size: 1.7em;
-          font-weight: 700;
-          color: rgba(0, 0, 0, .7);
+      @media screen and (max-width: 768px){
+        margin-right: 3%;
+      }
+
+      .hamburger .line {
+        position: relative;
+        overflow: hidden;
+        display: block;
+        width: 37px;
+        height: 5px;
+        background-color: white;
+        margin: 8px auto;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        right: 0;
+        border-radius: 10px;
+
+        &:hover {
           cursor: pointer;
-          text-decoration: none!important;
-          &:hover {
-            color: rgba(0, 0, 0, .9);
-            text-decoration: none!important;
-          }
         }
       }
-      #header-trigger {
-        display: none;
-        float: right;
-        height: 50px;
-        width: 50px;
-        margin-top: 15px;
-        line-height: 10px;
-        text-align: center;
-        background: rgb(167, 172, 175);
-        opacity: .7;
-        border-radius: 12px;
-        padding-top: 6px;
+
+      #hamburger-1.is-active .line:nth-child(2){
+        opacity: 0;
+      }
+
+      #hamburger-1.is-active .line:nth-child(1){
+        -webkit-transform: translateY(13px) rotate(45deg);
+        -ms-transform: translateY(13px) rotate(45deg);
+        -o-transform: translateY(13px) rotate(45deg);
+        transform: translateY(13px) rotate(45deg);
+      }
+
+      #hamburger-1.is-active .line:nth-child(3){
+        -webkit-transform: translateY(-13px) rotate(-45deg);
+        -ms-transform: translateY(-13px) rotate(-45deg);
+        -o-transform: translateY(-13px) rotate(-45deg);
+        transform: translateY(-13px) rotate(-45deg);
+      }
+    }
+
+
+    .logo-wrapper {
+
+      //margin: 0 auto;
+      height: 80px;
+      line-height: 80px;
+      margin-left: 20%;
+
+      @media screen and (max-width: 768px){
+        margin-left: 3%;
+      }
+
+      .brand-name {
+
+        @media screen and (max-width: 768px){
+          font-family: 'M PLUS Rounded 1c', sans-serif;
+          font-size: 20px;
+        }
+
+        font-family: 'M PLUS Rounded 1c', sans-serif;
+        font-size: 26px;
+        font-weight: 700;
+        color: white;
         cursor: pointer;
-        span {
-          display: inline-block;
-          height: 4px;
-          width: 25px;
-          background: rgba(44, 62, 80, 1.0);
-          border-radius: 8px;
-        }
-      }
-      nav {
-        float: right;
-        height: 100%;
-        line-height: 80px;
-        ul {
-          margin: 0;
-          list-style: none;
-          padding: 0;
-          li {
-            display: inline-block;
-            padding-left: 0px;
-            cursor: pointer;
-            a {
-              text-decoration: none;
-              font-family: 'Open Sans';
-              font-size: 18px;
-              text-transform: uppercase;
-              color: rgba(44, 62, 80, 0.75);
-              font-weight: 600;
-              &::after,
-              &::before {
-                content: '';
-                display: inline-block;
-                height: 16px;
-                width: 16px;
-                position: relative;
-                opacity: 0;
-                transition: all 0.3s;
-                z-index: 456456;
-              }
+        text-decoration: none !important;
 
-              &::after {
-                top: -2px;
-                left: -8px;
-                border-right: 5px solid #1955ae;
-                border-top: 5px solid #1955ae;
-              }
-              &::before {
-                bottom: -7px;
-                left: 10px;
-                border-left: 5px solid #1955ae;
-                border-bottom: 5px solid #1955ae;
-              }
-              &:hover::after {
-                top: -10px;
-                left: 10px;
-                opacity: 1;
-              }
-              &:hover::before {
-                bottom: -13px;
-                left: -10px;
-                opacity: 1;
-              }
-              &:hover {
-                color: rgba(44, 62, 80, .9);
-              }
-            }
-          }
+        &:hover {
+          color: #254c5d;
+          text-decoration: none !important;
         }
       }
     }
   }
-  /*
-  @media screen and (max-width: 768px) {
-    #header {
-      height: 60px;
-
-      .nav-wrapper {
-
-        #closebtn {
-          height:25px;
-          width:25px;
-          text-decoration:none;
-          font-size: 36px !important;
-          z-index:100;
-          color:#fff;
-          cursor:pointer;
-          trainsition:background-position .3s;
-        }
-
-        .line1, .line2, .line3 {
-          margin-top:5px;
-          background-color: #181818;
-          width:25px;
-          height:3px;
-          display:block;
-          position:relative;
-          opacity:1.0;
-          border-radius:15%;
-          transition: all .3s;
-        }
-
-        .line1.active {
-          transform: rotate(270deg);
-          opacity:0.0;
-          background-color:yellow;
-          top:5px;
-        }
-
-        .line2.active {
-          transform: rotate(45deg);
-          background-color:yellow;
-        }
-
-        .line3.active {
-          transform: rotate(-45deg);
-          background-color:yellow;
-          top:-7px;
-        }
-
-        .menuitems {
-          padding-top:12px;
-          padding-bottom:12px;
-          text-decoration: none;
-          list-style:none;
-          font-family: "Lato", sans-serif;
-          font-weight: 300;
-          font-size: 24px;
-          display: inline-block;
-          position:relative;
-          text-align:center;
-          color: #fff;
-          opacity:0.0;
-          transition: all .5s ease-in-out;
-        }
-
-        .menuitems:after {
-          content:'';
-          display:block;
-          width: 0;
-          height: 1px;
-          background: #fff;
-          transition: width .2s;
-        }
-
-        .menuitems:hover::after {
-          width:100%;
-        }
-
-        #header-trigger {
-          display: inline-block;
-          &:hover {
-            background: rgba(149, 165, 166, 1.0);
-          }
-        }
-
-        .logo-wrapper {
-          line-height: 60px;
-          .brand-name {
-            font-size: 1.4em;
-          }
-        }
-        #header-trigger {
-          height: 40px;
-          width: 40px;
-          margin-top: 10px;
-          line-height: 7px;
-          border-radius: 12px;
-          padding-top: 4px;
-        }
-
-        nav {
-          display: none;
-          float: none;
-          position: absolute;
-          top: 60px;
-          left: 0;
-          width: 100%;
-          height: auto;
-          line-height: 40px;
-          background: #ecf0f1;
-          border-top: 1px solid rgba(44, 62, 80, .4);
-          ul {
-            display: block;
-            li {
-              display: block;
-              &:hover {
-                background: rgba(149, 165, 166, .7)
-              }
-              a {
-                padding-left: 15px;
-                &::after,
-                &::before {
-                  display: none;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-   */
 
 
 </style>

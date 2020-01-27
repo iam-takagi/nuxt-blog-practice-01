@@ -1,4 +1,5 @@
 <template>
+
   <div class="container">
     <div class="post">
       <Headline :post="post"/>
@@ -30,7 +31,7 @@
     background: white;
     padding: 10px;
     max-width: 65%;
-    border-radius: 10px;
+    border-radius: 1em;
 
     @media screen and (max-width: 768px) {
       max-width: 100%;
