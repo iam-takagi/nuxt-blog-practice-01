@@ -22,7 +22,12 @@
         <ul>
           <li>
             <a href="https://discord.gg/rJRZaXC" class="no-decoration" style="color: white">
-              <font-awesome-icon :icon="['fab', 'discord']" style="font-size: 15px"/> 公式Discordサーバー
+              <font-awesome-icon :icon="['fab', 'discord']" style="font-size: 15px"/> Discordサーバー
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/mctechjp" class="no-decoration" style="color: white">
+              <font-awesome-icon :icon="['fab', 'twitter']" style="font-size: 15px"/> Twitter
             </a>
           </li>
           <li>

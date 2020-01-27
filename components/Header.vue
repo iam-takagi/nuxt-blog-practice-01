@@ -155,7 +155,7 @@
       .brand-name {
         @media screen and (max-width: 768px){
           font-family: Apple;
-          font-size: 20px;
+          font-size: 12px;
         }
 
         font-family: 'M PLUS Rounded 1c', sans-serif;
