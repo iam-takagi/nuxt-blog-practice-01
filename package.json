@@ -1,7 +1,7 @@
 {
-  "name": "mctechjp",
+  "name": "Minecraft Tech Portal JP",
   "version": "1.0.0",
-  "description": "My phenomenal Nuxt.js project",
+  "description": "MC Tech JP 公式サイト",
   "author": "notsmatch",
   "private": true,
   "scripts": {
