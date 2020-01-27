@@ -10,7 +10,8 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "test": "jest",
-    "import-data": "node ./bin/download-content-model.js && contentful-import --content-file ./data/blog/contentful-export.json"
+    "import-data": "node ./bin/download-content-model.js && contentful-import --content-file ./data/blog/contentful-export.json",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
