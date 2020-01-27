@@ -83,10 +83,7 @@ export const mutations = {
           })
         }
       });
-
-      console.log(state.tags)
     }
-
   }
 }
 
