@@ -154,7 +154,7 @@
 
       .brand-name {
         @media screen and (max-width: 768px){
-          font-family: Apple;
+          font-family: "BIZ UDPゴシック";
           font-size: 12px;
         }
 
