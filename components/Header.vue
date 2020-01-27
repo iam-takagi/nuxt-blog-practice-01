@@ -16,7 +16,7 @@
     <nav class="slidedown">
       <ul class="menu">
         <li><nuxt-link to="/" class="item no-decoration">Home</nuxt-link></li>
-        <li><nuxt-link to="/posts/pages/1" class="item no-decoration">All Posts</nuxt-link></li>
+        <li><nuxt-link to="/posts/pages/1" class="item no-decoration">Posts</nuxt-link></li>
       </ul>
     </nav>
 
@@ -153,9 +153,8 @@
       }
 
       .brand-name {
-
         @media screen and (max-width: 768px){
-          font-family: 'M PLUS Rounded 1c', sans-serif;
+          font-family: Apple;
           font-size: 20px;
         }
 

@@ -1,19 +1,43 @@
 <template>
-  <footer class="main">
+  <footer>
 
-    <div class="contents">
-      <h2 class="heading">Tags</h2>
-    </div>
-    <nuxt-link v-for="tag in tags" :key="tag" :to="linkTo('tags', tag)" class="footer_tag_btn">
-      {{tag}}
-    </nuxt-link>
+    <div class="wrapper tags_categories">
+      <div class="contents">
+        <h2 class="heading">Tags</h2>
+      </div>
+      <nuxt-link v-for="tag in tags" :key="tag" :to="linkTo('tags', tag)" class="footer_tag_btn">
+        {{tag}}
+      </nuxt-link>
 
-    <div class="contents">
-      <h2 class="heading">Categories</h2>
+      <div class="contents">
+        <h2 class="heading">Categories</h2>
+      </div>
+      <nuxt-link v-for="category in categories" :key="category" :to="linkTo('categories', category)" class="footer_category_btn">
+        {{category}}
+      </nuxt-link>
     </div>
-    <nuxt-link v-for="category in categories" :key="category" :to="linkTo('categories', category)" class="footer_category_btn">
-      {{category}}
-    </nuxt-link>
+
+    <div class="wrapper info">
+      <div class="contents">
+        <ul>
+          <li>
+            <a href="https://discord.gg/rJRZaXC" class="no-decoration" style="color: white">
+              <font-awesome-icon :icon="['fab', 'discord']" style="font-size: 15px"/> 公式Discordサーバー
+            </a>
+          </li>
+          <li>
+            <nuxt-link to = "privacy-policy" class="no-decoration" style="color: white">
+              <font-awesome-icon :icon="['far', 'hand-paper']" style="font-size: 15px"/> プライバシーポリシー
+            </nuxt-link>
+          </li>
+        </ul>
+      </div>
+
+      <p style="color: white">
+        &copy; {{new Date().getFullYear()}} Minecraft Tech Portal JP
+      </p>
+    </div>
+
   </footer>
 </template>
 
@@ -38,9 +62,25 @@
     position: absolute;
   }
 
-  .main {
-    background: #d2d2d2;
+  .wrapper {
+    width: 100%;
+    position: relative;
     text-align: center;
+  }
+
+  .tags_categories {
+    background: #d2d2d2;
+  }
+
+  .info {
+    background: #3094b8;
+    padding: 10px;
+  }
+
+  ul li {
+    list-style: none;
+    display: inline-flex;
+    padding: 10px;
   }
 
 </style>
