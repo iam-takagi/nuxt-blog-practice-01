@@ -5,10 +5,11 @@
 </template>
 
 <script>
+
     import {createClient} from '~/plugins/contentful.js'
     import Post from "../../components/post/Post";
 
-    const client = createClient()
+    const client = createClient();
 
     export default {
         asyncData ({ env, params }) {

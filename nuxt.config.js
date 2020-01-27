@@ -3,8 +3,7 @@ const ctfConfig = getConfigForKeys([
   'CTF_BLOG_POST_TYPE_ID',
   'CTF_SPACE_ID',
   'CTF_CDA_ACCESS_TOKEN',
-  'CTF_CMA_ACCESS_TOKEN',
-  'CTF_PERSON_ID'
+  'CTF_CMA_ACCESS_TOKEN'
 ])
 const {createClient} = require('./plugins/contentful')
 const cdaClient = createClient(ctfConfig)
@@ -14,6 +13,8 @@ const cmaClient = cmaContentful.createClient({
 })
 
 const config = {
+
+  mode: 'universal',
 
   /*
   ** Headers of the pages
@@ -102,7 +103,6 @@ const config = {
     ]
   },
 
-
   /*
   ** Build configuration
   */
@@ -127,59 +127,6 @@ const config = {
       require('postcss-hexrgba')(),
     ],
 
-
-    generate: {
-      fallback: true,
-      routes() {
-        return Promise.all([
-          client.getEntries({
-            content_type: process.env.CTF_BLOG_POST_TYPE_ID
-          }),
-          client.getEntries({
-            content_type: 'category'
-          }),
-          client.getEntries({
-            content_type: 'tag'
-          })
-        ]).then(([posts, categories, tags]) => {
-          return [
-            ...posts.items.map((post) => {
-              return { route: `posts/${post.fields.slug}`, payload: post }
-            }),
-            ...categories.items.map((category) => {
-              return { route: `categories/${category.fields.slug}`, payload: category }
-            }),
-            ...tags.items.map((tag) => {
-              return { route: `tags/${tag.fields.slug}`, payload: tag }
-            })
-          ]
-        })
-      }
-    },
-
-    /*
-    generate: {
-      routes() {
-        return Promise.all([
-          // get all blog posts
-          cdaClient.getEntries({
-            'content_type': ctfConfig.CTF_BLOG_POST_TYPE_ID
-          }),
-          // get the blog post content type
-          cmaClient.getSpace(ctfConfig.CTF_SPACE_ID)
-            .then(space => space.getContentType(ctfConfig.CTF_BLOG_POST_TYPE_ID))
-        ])
-          .then(([entries, postType]) => {
-            return [
-              // map entries to URLs
-              ...entries.items.map(entry => `/blog/${entry.fields.slug}`),
-              // map all possible tags to URLs
-              ...postType.fields.find(field => field.id === 'tags').items.validations[0].in.map(tag => `/tags/${tag}`)
-            ]
-          })
-      }
-    },
-     */
   },
 
   env: {
