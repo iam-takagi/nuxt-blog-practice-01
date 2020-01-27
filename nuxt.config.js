@@ -28,6 +28,9 @@ const config = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      {src: 'https://platform.twitter.com/widgets.js'}
     ]
   },
 
