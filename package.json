@@ -11,7 +11,8 @@
     "generate": "nuxt generate",
     "test": "jest",
     "import-data": "node ./bin/download-content-model.js && contentful-import --content-file ./data/blog/contentful-export.json",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "deploy": "git push heroku master"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
@@ -29,6 +30,7 @@
     "markdown-it-anchor": "^5.2.5",
     "markdown-it-sanitizer": "^0.4.3",
     "markdown-it-table-of-contents": "^0.4.4",
+    "moment-timezone": "^0.5.27",
     "nuxt": "^2.0.0",
     "nuxt-fontawesome": "^0.4.0",
     "postcss-hexrgba": "^1.0.1",
