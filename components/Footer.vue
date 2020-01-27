@@ -69,17 +69,19 @@
 
   .wrapper {
     width: 100%;
+    height: 100%;
     position: relative;
     text-align: center;
   }
 
   .tags_categories {
     background: #d2d2d2;
+    padding: 30px;
   }
 
   .info {
     background: #3094b8;
-    padding: 10px;
+    padding: 75px;
   }
 
   ul li {
