@@ -79,6 +79,9 @@ const config = {
     ['@nuxtjs/moment', ['ja']],
     ['@nuxtjs/google-analytics', {
       id: 'UA-157025064-1'
+    }],
+    ['@nuxtjs/google-adsense', {
+      id: 'ca-pub-7932483299460648'
     }]
   ],
 
