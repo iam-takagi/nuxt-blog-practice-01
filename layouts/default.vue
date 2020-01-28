@@ -53,6 +53,12 @@
   }
 
   .heading {
+
+    @media screen and (max-width: 768px){
+      font-family: 游ゴシック;
+      font-size: 1em;
+    }
+
     font-size: 30px;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     margin: 20px;
