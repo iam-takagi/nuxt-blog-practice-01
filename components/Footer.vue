@@ -31,7 +31,7 @@
             </a>
           </li>
           <li>
-            <nuxt-link to = "privacy-policy" class="no-decoration" style="color: white">
+            <nuxt-link to = "/privacy-policy" class="no-decoration" style="color: white">
               <font-awesome-icon :icon="['far', 'hand-paper']" style="font-size: 15px"/> プライバシーポリシー
             </nuxt-link>
           </li>
