@@ -6,7 +6,7 @@
     <ul v-for="post in postsByLimit(6)" :key="post">
       <li>
         <img :src="post.fields.heroImage.fields.file.url + '?fit=scale&w=128&h=75'"/>
-        <nuxt-link :to="linkTo('posts', post.fields.slug)" class="no-decoration" style="color: black; font-size: 15px">{{post.fields.title}}</nuxt-link>
+        <nuxt-link :to="linkTo('posts', post.fields.slug)" class="no-decoration" style="color: black; font-size: 12px;">{{post.fields.title}}</nuxt-link>
       </li>
     </ul>
 
@@ -36,16 +36,17 @@
 
 <style scoped lang="scss">
   .menu {
-    width: 400px;
+    max-width: 100%;
     font-family: verdana, Segoe UI;
     margin: 10px auto;
+    padding: 0 auto;
 
     li {
       background: white;
       list-style: none;
 
       img {
-        padding: 10px;
+        padding: 5px;
       }
 
       &:after {
