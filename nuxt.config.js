@@ -85,8 +85,18 @@ const config = {
     }],
     ['@nuxtjs/google-adsense', {
       id: 'ca-pub-7932483299460648'
-    }]
+    }],
+    '@nuxtjs/pwa'
   ],
+
+  manifest: {
+    name: "Minecraft Tech Portal JP",
+    title: "Minecraft Tech Portal JP",
+    'og:title': 'Minecraft Tech Portal JP',
+    description: 'Minecraft Tech Portal JP',
+    'og:description': 'Minecraft Tech Portal JP',
+    lang: 'ja',
+  },
 
   markdownit: {
     injected: true, // $mdを利用してmarkdownをhtmlにレンダリングする
