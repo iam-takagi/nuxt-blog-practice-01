@@ -2,7 +2,7 @@
   <div class="container">
 
     <div class="contents">
-      <h1 class="heading">カテゴリ: {{category}} に関する記事</h1>
+      <h1 class="heading">カテゴリ: {{category}}</h1>
     </div>
 
     <ul class="contents">
@@ -41,6 +41,11 @@
         async asyncData( { params, error }) {
             return {
                 category: params.slug
+            }
+        },
+        head(){
+            return {
+                 title: "カテゴリ: " + this.category  + ' - Miencraft Tech Portal JP'
             }
         },
         computed: {

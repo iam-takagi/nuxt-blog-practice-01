@@ -64,6 +64,11 @@
                 this.currentPage = Number(pageNum);
             },
         },
+         head(){
+            return {
+                 title: "全ての記事: ページ" + this.currentPage  + ' - Miencraft Tech Portal JP'
+            }
+        },
         computed: {
             ...mapGetters(['linkTo']),
 

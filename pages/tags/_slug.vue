@@ -2,7 +2,7 @@
   <div class="container">
 
     <div class="contents">
-      <h1 class="heading">タグ: {{tag}} に関する記事</h1>
+      <h1 class="heading">タグ: {{tag}}</h1>
     </div>
 
     <ul class="contents">
@@ -41,6 +41,11 @@
         async asyncData( { params, error }) {
             return {
                 tag: params.slug
+            }
+        },
+        head(){
+            return {
+                 title: "タグ: " + this.tag  + ' - Miencraft Tech Portal JP'
             }
         },
         computed: {
