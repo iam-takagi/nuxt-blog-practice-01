@@ -24,7 +24,15 @@ const config = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
+      { hid: 'og:description', property: 'og:description',content: process.env.npm_package_description || ''  },
+      { hid: 'og:url', property: 'og:url', content: 'https://mctech.life/' },
+      { hid: 'og:title', property: 'og:title', content: 'Miencraft Tech Portal JP' },
+      { hid: 'og:type', property: 'og:type', content: 'website'},
+      { hid: 'og:image', property: 'og:image', content: 'https://i.imgur.com/l6uYFqI.png' },
+      { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'Miencraft Tech Portal JP' },
+      { hid: 'og:locale', property: 'og:locale', content: 'ja_JP' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
