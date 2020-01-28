@@ -39,6 +39,10 @@
       text-decoration: none!important;
       margin-top: 15px;
 
+      @media screen and (max-width: 768px){
+         font-size: 18px;
+      }
+
       &:hover {
         text-decoration: none!important;
       }

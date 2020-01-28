@@ -7,7 +7,7 @@
 
     <ul class="contents">
 
-      <li class="cards_item" v-for="post in postsByCategory(category)">
+      <li class="cards_item" v-for="post in postsByCategory(category)" :key="post">
 
         <nuxt-link :to="linkTo('posts', post.fields.slug)">
           <div class="card">

@@ -1,11 +1,11 @@
 <template>
 
   <div class="menu">
-    <h2 class="heading">最近の記事</h2>
+    <h2 class="heading">他の記事も読む</h2>
 
-    <ul v-for="post in postsByLimit(6)" :key="post">
+    <ul v-for="post in postsByLimit(10)" :key="post">
       <li>
-        <img :src="post.fields.heroImage.fields.file.url + '?fit=scale&w=128&h=75'"/>
+        <!-- <img :src="post.fields.heroImage.fields.file.url + '?fit=scale&w=128&h=75'"/> -->
         <nuxt-link :to="linkTo('posts', post.fields.slug)" class="no-decoration" style="color: black; font-size: 12px;">{{post.fields.title}}</nuxt-link>
       </li>
     </ul>
@@ -35,27 +35,20 @@
 </script>
 
 <style scoped lang="scss">
-  .menu {
-    max-width: 100%;
-    font-family: verdana, Segoe UI;
-    margin: 10px auto;
-    padding: 0 auto;
 
-    li {
-      background: white;
-      list-style: none;
+  ul, ol {
+  padding: 0;
+  position: relative;
+  }
 
-      img {
-        padding: 5px;
-      }
-
-      &:after {
-        content: '';
-        display: block;
-        background: #c3ccd7;
-        height: 1px;
-      }
-    }
+  ul li, ol li {
+  color: #2d8fdd;
+  border-left: solid 6px #2d8fdd;/*左側の線*/
+  background: #f1f8ff;/*背景色*/
+  margin-bottom: 3px;/*下のバーとの余白*/
+   line-height: 1.5;
+  padding: 0.5em;
+  list-style-type: none!important;/*ポチ消す*/
   }
 
 </style>

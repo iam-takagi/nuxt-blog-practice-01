@@ -7,7 +7,7 @@
     </div>
 
     <div>
-      <LatestPosts/>
+      <OtherPosts/>
     </div>
 
   </div>
@@ -17,10 +17,10 @@
 <script>
     import Bodytext from "./Bodytext";
     import Headline from "./Headline";
-    import LatestPosts from "./LatestPosts";
+    import OtherPosts from "./OtherPosts";
     export default {
         name: "Post",
-        components: {LatestPosts, Headline, Bodytext},
+        components: {OtherPosts, Headline, Bodytext},
         props: ['post']
     }
 </script>
