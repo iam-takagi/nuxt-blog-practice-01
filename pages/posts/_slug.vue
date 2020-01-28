@@ -29,9 +29,9 @@
                      { hid: 'description', name: 'description', content: 'Minecraft Tech Portal JP 公式サイト' },
                      { hid: 'og:url', property: 'og:url', content: 'https://mctech.life/' },
                      { hid: 'og:title', property: 'og:title', content: this.post.fields.title  + ' - Miencraft Tech Portal JP' },
-                     { hid: 'og:type', property: 'og:type', content: 'website' },
+                     { hid: 'og:type', property: 'og:type', content: 'website'},
 				     { hid: 'og:description', property: 'og:description', content: 'Minecraft Tech Portal JP 公式サイト' },
-				     { hid: 'og:image', property: 'og:image', content: post.fields.heroImage.fields.file.url + '?fit=scale&w=1024&h=512' },
+				     { hid: 'og:image', property: 'og:image', content: this.post.fields.heroImage.fields.file.url + '?fit=scale&w=1024&h=512' },
 				     { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
                      { hid: 'og:site_name', property: 'og:site_name', content: 'Miencraft Tech Portal JP' },
                      { hid: 'og:locale', property: 'og:locale', content: 'ja_JP' }
