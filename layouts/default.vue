@@ -55,8 +55,7 @@
   .heading {
 
     @media screen and (max-width: 768px){
-      font-family: 游ゴシック;
-      font-size: 1em;
+      font-size: 16px;
     }
 
     font-size: 30px;

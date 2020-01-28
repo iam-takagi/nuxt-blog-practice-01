@@ -154,8 +154,7 @@
 
       .brand-name {
         @media screen and (max-width: 768px){
-          font-family: "BIZ UDPゴシック";
-          font-size: 12px;
+          font-size: 14px;
         }
 
         font-family: 'M PLUS Rounded 1c', sans-serif;
