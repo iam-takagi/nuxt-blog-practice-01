@@ -2,7 +2,7 @@
   <div class="container">
 
     <div class="contents">
-      <h1 class="heading">タグ: {{tag}}</h1>
+      <h1 class="heading">タグ: {{tag}} ({{postsByTag(tag).length}}件)</h1>
     </div>
 
     <ul class="contents">
@@ -21,7 +21,9 @@
                </span>
               <h2 class="card_title">{{ post.fields.title }}</h2>
               <p class="card_text">{{ post.fields.description.substring(0, 80) }}</p>
-              <nuxt-link v-for="tag in post.fields.tags" :key="tag" :to="linkTo('tags', tag)" class="tag_btn">{{ tag }}</nuxt-link>
+              <nuxt-link v-for="tag in post.fields.tags" :key="tag" :to="linkTo('tags', tag)" class="tag_btn">
+                 <font-awesome-icon icon="tags" style="font-size: 15px"/> {{ tag }}
+                </nuxt-link>
             </div>
           </div>
 

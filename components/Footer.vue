@@ -6,7 +6,8 @@
         <h2 class="heading">Tags</h2>
       </div>
       <nuxt-link v-for="tag in tags" :key="tag" :to="linkTo('tags', tag)" class="footer_tag_btn">
-        {{tag}}
+        <font-awesome-icon icon="tags" style="font-size: 15px"/>
+         {{tag}}
       </nuxt-link>
 
       <div class="contents">

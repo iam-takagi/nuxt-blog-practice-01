@@ -8,7 +8,10 @@
       <h1 class="headline-title">{{post.fields.title}}</h1>
       <p class="headline-description">{{post.fields.description}}</p>
       <p style="margin-top: 10px">
-        <nuxt-link v-for="tag in post.fields.tags" :key="tag" :to="linkTo('tags', tag)" class="tag_btn">{{ tag }}</nuxt-link>
+        <nuxt-link v-for="tag in post.fields.tags" :key="tag" :to="linkTo('tags', tag)" class="tag_btn">
+           <font-awesome-icon icon="tags" style="font-size: 15px"/>
+           {{ tag }}
+           </nuxt-link>
       </p>
 
       <div class="headline_card_image">

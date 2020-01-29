@@ -2,7 +2,7 @@
   <div class="container">
 
     <div class="contents">
-      <h1 class="heading">全ての記事</h1>
+      <h1 class="heading">全ての記事 ({{posts.length}}件)</h1>
     </div>
 
     <ul class="contents">
@@ -71,6 +71,7 @@
         },
         computed: {
             ...mapGetters(['linkTo']),
+            ...mapState(['posts']),
 
             getCurrentPagePosts: function() {
                 let current = this.currentPage * this.parPage;

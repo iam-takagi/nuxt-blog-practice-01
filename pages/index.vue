@@ -23,7 +23,9 @@
                </span>
               <h2 class="card_title">{{ post.fields.title }}</h2>
               <p class="card_text">{{ post.fields.description.substring(0, 80) }}</p>
-              <nuxt-link v-for="tag in post.fields.tags" :key="tag" :to="linkTo('tags', tag)" class="tag_btn">{{ tag }}</nuxt-link>
+              <nuxt-link v-for="tag in post.fields.tags" :key="tag" :to="linkTo('tags', tag)" class="tag_btn">
+               <font-awesome-icon icon="tags" style="font-size: 15px"/>  {{ tag }}
+                </nuxt-link>
             </div>
             <!--
             <nuxt-link :to="linkTo('posts', post.fields.slug)" class="read_button">この記事を読む</nuxt-link>
