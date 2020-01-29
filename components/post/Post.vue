@@ -4,6 +4,7 @@
     <div class="post">
       <Headline :post="post"/>
       <Bodytext :post="post"/>
+      <JustComments/>
     </div>
 
     <div>
@@ -18,9 +19,10 @@
     import Bodytext from "./Bodytext";
     import Headline from "./Headline";
     import OtherPosts from "./OtherPosts";
+    import JustComments from "./JustComments";
     export default {
         name: "Post",
-        components: {OtherPosts, Headline, Bodytext},
+        components: {OtherPosts, Headline, Bodytext, JustComments},
         props: ['post']
     }
 </script>

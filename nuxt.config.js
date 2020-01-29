@@ -38,7 +38,8 @@ const config = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      {src: 'https://platform.twitter.com/widgets.js'}
+      {src: 'https://platform.twitter.com/widgets.js'},
+      {src: 'https://just-comments.com/w2.js'}
     ]
   },
 
