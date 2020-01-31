@@ -17,8 +17,8 @@
 
 <style scoped lang="scss">
   @import url('https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap');
- // @import "~github-markdown-css/github-markdown.css";
-   @import "../../assets/github-markdown.css";
+  @import "../../assets/markdown.scss";
+  
   .markdown-body {
     box-sizing: border-box;
     min-width: 200px;
