@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="markdown-body line-numbers" v-html="$md.render(post.fields.body)"></div>
+    <div class="markdown-body" v-html="$md.render(post.fields.body)"></div>
 
     <a :href="'https://twitter.com/intent/tweet?text=' + '&url=https%3A%2F%2Fmctech.life%2Fposts%2F' + post.fields.slug + '&hashtags=mctechjp&via=mctechjp&related=mctechjp'" class="twitter-share-button" data-show-count="true" style="margin-top: 20px">Tweet</a>
   </div>
