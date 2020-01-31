@@ -1,11 +1,11 @@
 <template>
 
-  <div class="menu">
+  <div>
+
     <h2 class="heading">他の記事も読む</h2>
 
-    <ul v-for="post in postsByLimit(10)" :key="post">
+    <ul v-for="post in postsByLimit(15)" :key="post">
       <li>
-        <!-- <img :src="post.fields.heroImage.fields.file.url + '?fit=scale&w=128&h=75'"/> -->
         <nuxt-link :to="linkTo('posts', post.fields.slug)" class="no-decoration" style="color: black; font-size: 12px;">{{post.fields.title}}</nuxt-link>
       </li>
     </ul>

@@ -4,6 +4,7 @@
     <div class="post">
       <Headline :post="post"/>
       <Bodytext :post="post"/>
+      <ShareButtons/>
       <JustComments/>
     </div>
 

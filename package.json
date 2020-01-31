@@ -25,7 +25,6 @@
     "@nuxtjs/pwa": "^3.0.0-beta.19",
     "contentful": "^4.3.0",
     "contentful-management": "^3.4.0",
-    "github-markdown-css": "^3.0.1",
     "jquery": "^3.4.1",
     "markdown-air": "0.0.4",
     "markdown-it": "^10.0.0",
