@@ -207,7 +207,7 @@
 }
 
 .markdown-body h1 {
-  font-size: 2em;
+  font-size: 1em;
   margin: .67em 0;
 }
 
@@ -310,7 +310,7 @@
 }
 
 .markdown-body h1 {
-  font-size: 32px;
+  font-size: 20px;
 }
 
 .markdown-body h1,
@@ -319,11 +319,11 @@
 }
 
 .markdown-body h2 {
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .markdown-body h3 {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .markdown-body h3,
@@ -332,11 +332,11 @@
 }
 
 .markdown-body h4 {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .markdown-body h5 {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .markdown-body h5,
@@ -561,18 +561,17 @@
   vertical-align: middle;
 }
 
-/**
-見出し
- */
+
 .markdown-body h1,
 .markdown-body h2,
 .markdown-body h3,
 .markdown-body h4,
 .markdown-body h5,
 .markdown-body h6 {
-  color: #2d8fdd;
+  
   border-left: solid 6px #2d8fdd;/*左側の線*/
-  background: #f1f8ff;/*背景色*/
+  /* background: #f1f8ff;/*背景色*/
+  background: white;
   margin-bottom: 3px;/*下のバーとの余白*/
   line-height: 1.5;
   padding: 0.5em;
@@ -591,7 +590,7 @@
 }
 
 .markdown-body h1 {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .markdown-body h1,

@@ -38,7 +38,7 @@
     left: 10px;
 
     .headline-title {
-      font-size: 28px;
+      font-size: 22px;
       text-decoration: none!important;
       margin-top: 15px;
 

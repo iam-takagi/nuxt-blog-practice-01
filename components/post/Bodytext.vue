@@ -16,8 +16,8 @@
 </script>
 
 <style scoped lang="scss">
-  @import url('https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap');
-  @import "../../assets/markdown.scss";
+  //@import url('https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap');
+  @import "../../assets/markdown.css";
   
   .markdown-body {
     box-sizing: border-box;
