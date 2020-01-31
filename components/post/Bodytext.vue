@@ -25,8 +25,6 @@
     max-width: 980px;
     padding-top: 20px;
     margin: 0 auto;
-
-   
   }
 
 </style>
