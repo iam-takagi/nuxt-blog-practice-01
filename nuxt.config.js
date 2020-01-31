@@ -62,8 +62,7 @@ const config = {
     '~/plugins/contentful',
     '~/plugins/moment-filter',
     '~/plugins/markdown-it-plugin',
-    '~plugins/vue-material',
-    '~/plugins/prism',
+    '~plugins/vue-material'
   ],
   /*
   ** Nuxt.js dev-modules
