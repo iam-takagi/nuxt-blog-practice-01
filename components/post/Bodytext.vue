@@ -16,8 +16,8 @@
         name: "Bodytext",
         props: ['post'],
         async mounted() {
-           loadLanguages(['kotlin', 'java', 'js', 'javascript']);
-           Prism.highlightAll()
+           await loadLanguages(['kotlin', 'java', 'js', 'javascript']);
+           await Prism.highlightAll()
         }
     }
 </script>
