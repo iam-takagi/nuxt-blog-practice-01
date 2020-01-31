@@ -54,7 +54,6 @@ const config = {
   ** Global CSS
   */
   css: [
-    '~/assets/prism.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -63,7 +62,8 @@ const config = {
     '~/plugins/contentful',
     '~/plugins/moment-filter',
     '~/plugins/markdown-it-plugin',
-    { src: '~/plugins/vue-material' }
+    '~plugins/vue-material',
+    '~/plugins/prism',
   ],
   /*
   ** Nuxt.js dev-modules
