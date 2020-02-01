@@ -8,16 +8,13 @@
 </template>
 
 <script>
-    import Prism from 'prismjs';
-    import 'prismjs/themes/prism-tomorrow.css'
-    var loadLanguages = require('prismjs/components/index.js');
+    import Prism from '~/plugins/prism';
 
     export default {
         name: "Bodytext",
         props: ['post'],
-        async mounted() {
-           await loadLanguages(['kotlin', 'java', 'js', 'javascript']);
-           await Prism.highlightAll()
+        mounted() {
+          Prism.highlightAll()
         }
     }
 </script>
