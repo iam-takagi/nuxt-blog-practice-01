@@ -44,7 +44,9 @@ const config = {
   },
 
   router: {
-    middleware: ['getContentful']
+    middleware: [
+      'getContentful'
+    ]
   },
   /*
   ** Customize the progress-bar color
@@ -63,8 +65,7 @@ const config = {
     '~/plugins/contentful',
     '~/plugins/moment-filter',
     '~/plugins/markdown-it-plugin',
-    '~/plugins/vue-material',
-    '~/plugins/prism'
+    '~/plugins/vue-material'
   ],
   /*
   ** Nuxt.js dev-modules

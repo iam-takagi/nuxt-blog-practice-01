@@ -1,5 +1,8 @@
 const MarkdownIt =  require('markdown-it')
-const Prism = require('prismjs')
+import Prism from 'prismjs';
+import 'prismjs/themes/prism-tomorrow.css'
+var loadLanguages = require('prismjs/components/index.js');
+loadLanguages(['kotlin', 'java', 'js', 'javascript', 'yaml']);
 
 export default ({ app }, inject) => {
   const md = require('markdown-it')({
@@ -9,6 +12,7 @@ export default ({ app }, inject) => {
     html: true,
     typegraphy: true,
 
+    
     highlight (str, lang) {
           if (lang && Prism.languages[lang]) {
               try {
@@ -16,7 +20,7 @@ export default ({ app }, inject) => {
                   } catch (e) {}
           }
           return `<pre class="language-plain"><code>${md.utils.escapeHtml(str)}</code></pre>`
-    },
+    }, 
   });
 
   md.use(require('markdown-it-anchor'))
