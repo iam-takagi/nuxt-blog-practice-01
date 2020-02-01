@@ -178,7 +178,8 @@
     -moz-user-select: none; /* Firefox */
     -webkit-user-select: none; /* Safari、Chromeなど */
     -ms-user-select: none; /* IE10かららしい */
-    margin-right: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 
     &:hover {
       color: #ff5e3a;
@@ -209,7 +210,6 @@
     -moz-user-select: none; /* Firefox */
     -webkit-user-select: none; /* Safari、Chromeなど */
     -ms-user-select: none; /* IE10かららしい */
-    margin-right: 5px;
 
     &:hover {
       color: #ff5e3a;
