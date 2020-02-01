@@ -6,7 +6,8 @@
             <font-awesome-icon icon="folder" style="font-size: 15px"/>
            {{post.fields.category}}
            </nuxt-link>
-         <font-awesome-icon icon="calendar" style="font-size: 15px;"/> {{ new Date(post.fields.publishDate) | format-date }}
+         <font-awesome-icon icon="calendar" style="font-size: 15px;"/> 投稿日時: {{ new Date(post.fields.publishDate) | format-date }}
+         <span v-show="post.fields.lastUpdateDate"> <font-awesome-icon icon="clock" style="font-size: 15px;"/> 最終更新: {{ new Date(post.fields.lastUpdateDate) | format-date }} </span>
          </span>
       <h1 class="headline-title">{{post.fields.title}}</h1>
       <p class="headline-description">{{post.fields.description}}</p>
