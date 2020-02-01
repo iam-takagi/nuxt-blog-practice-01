@@ -8,13 +8,11 @@
 </template>
 
 <script>
-    import Prism from '~/plugins/prism';
-
     export default {
         name: "Bodytext",
         props: ['post'],
-        mounted() {
-          Prism.highlightAll()
+        mounted(){
+          Prism.highlightAll();
         }
     }
 </script>
@@ -22,7 +20,7 @@
 <style scoped lang="scss">
   //@import url('https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap'); 
   @import "../../assets/markdown.css";
-  
+
   .markdown-body {
     box-sizing: border-box;
     min-width: 200px;
