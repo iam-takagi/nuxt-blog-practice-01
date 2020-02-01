@@ -56,7 +56,7 @@ const config = {
   ** Global CSS
   */
   css: [
-   
+    {src: 'prismjs/themes/prism-tomorrow.css'}
   ],
   /*
   ** Plugins to load before mounting the App
