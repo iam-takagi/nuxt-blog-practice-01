@@ -67,7 +67,7 @@
     .item{
       font-size: 20px;
       display: block;
-      background: #3094b8;
+      background: #3172d4;
       padding: 10px;
       color: #fff;
       text-decoration: none;
@@ -80,11 +80,12 @@
   #header {
     height: 80px;
     width: 100%;
-    //max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 0 auto;
-    background: #3094b8;
+    /* background: #3094b8; */
+    background: #3172d4;
     z-index: 3;
-    //border-radius: 0 0 1em 1em;
+    /* border-radius: 0 0 1em 1em; */
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;

@@ -13,7 +13,10 @@
           <div class="card">
             <div class="card_image">
               <img :src="post.fields.heroImage.fields.file.url + '?fit=scale&w=1024&h=512'"/>
-              <nuxt-link :to="linkTo('categories', post.fields.category)" class="category_btn">{{post.fields.category}}</nuxt-link>
+              <nuxt-link :to="linkTo('categories', post.fields.category)" class="category_btn">
+                 <font-awesome-icon icon="folder" style="font-size: 15px"/>
+                {{post.fields.category}}
+                </nuxt-link>
             </div>
             <div class="card_content">
                <span style="color: #47494e">

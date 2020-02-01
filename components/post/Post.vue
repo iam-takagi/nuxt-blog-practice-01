@@ -1,18 +1,16 @@
 <template>
 
-  <div class="container">
+  <div class="post-container">
     <div class="post">
       <Headline :post="post"/>
       <Bodytext :post="post"/>
       <ShareButtons/>
       <JustComments/>
-    </div>
+    </div>    
 
-    <div>
-      <OtherPosts/>
-    </div>
-
+    <OtherPosts/>
   </div>
+
 
 </template>
 
@@ -33,12 +31,17 @@
     margin: 20px auto;
     background: white;
     padding: 10px;
-    max-width: 65%;
+    max-width: 100%;
     border-radius: 1em;
 
     @media screen and (max-width: 768px) {
       max-width: 100%;
     }
+  }
+
+  .post-container {
+    max-width: 900px;
+    margin: 0 auto;
   }
 
 

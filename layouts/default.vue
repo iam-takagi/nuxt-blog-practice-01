@@ -103,7 +103,7 @@
     text-decoration: none !important;
     padding: 4px 20px;
     border-radius: 25px;
-    background: #1f2d7b;
+    background: #2d8fdd;
     transition: .4s;
     color: rgba(255, 255, 255, 0.96);
 
@@ -126,7 +126,7 @@
     text-decoration: none !important;
     padding: 4px 20px;
     border-radius: 25px;
-    background: #1f2d7b;
+    background: #2d8fdd;
     transition: .4s;
     color: rgba(255, 255, 255, 0.96);
 
@@ -148,7 +148,7 @@
     text-decoration: none !important;
     padding: 4px 20px;
     border-radius: 25px;
-    background: #1f2d7b;
+    background: #2d8fdd;
     transition: .4s;
     color: rgba(255, 255, 255, 0.96);
 
@@ -197,6 +197,7 @@
     position: relative;
     display: inline-block;
     padding: 4px 20px;
+    margin: 4px;
     border-color: #696868;
     border-style: solid;
     border-width: 1px;

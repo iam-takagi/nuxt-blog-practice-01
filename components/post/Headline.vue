@@ -2,7 +2,10 @@
   <div class="headline">
     <div class="headline-content">
       <span style="color: #6c7077">
-         <nuxt-link :to="linkTo('categories', post.fields.category)" class="headline_category_btn">{{post.fields.category}}</nuxt-link>
+         <nuxt-link :to="linkTo('categories', post.fields.category)" class="headline_category_btn">
+            <font-awesome-icon icon="folder" style="font-size: 15px"/>
+           {{post.fields.category}}
+           </nuxt-link>
          <font-awesome-icon icon="calendar" style="font-size: 15px;"/> {{ new Date(post.fields.publishDate) | format-date }}
          </span>
       <h1 class="headline-title">{{post.fields.title}}</h1>

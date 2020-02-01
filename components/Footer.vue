@@ -14,6 +14,7 @@
         <h2 class="heading">Categories</h2>
       </div>
       <nuxt-link v-for="category in categories" :key="category" :to="linkTo('categories', category)" class="footer_category_btn">
+         <font-awesome-icon icon="folder" style="font-size: 15px"/>
         {{category}}
       </nuxt-link>
     </div>
@@ -40,7 +41,7 @@
       </div>
 
       <p style="color: white">
-        &copy; {{new Date().getFullYear()}} Minecraft Tech Portal JP
+        &copy; {{new Date().getFullYear()}} Minecraft Tech Portal JP | Nuxt.js
       </p>
     </div>
 
@@ -81,7 +82,7 @@
   }
 
   .info {
-    background: #3094b8;
+    background: #3172d4;
     padding: 75px;
   }
 
