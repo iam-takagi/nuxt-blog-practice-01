@@ -1,24 +1,18 @@
 <template>
-
   <div class="post-container">
     <div class="post">
       <Headline :post="post"/>
       <Bodytext :post="post"/>
-      <ShareButtons/>
-      <JustComments/>
 
-      <div v-show="disqus_shortname">
-        <vue-disqus
-        :shortname="disqus_shortname"
-        :identifier="post.fields.slug"
-        :url="`${base_url}/posts/${post.fields.slug}`"
-        ></vue-disqus>
+      <div v-show="disqus_shortname" class="comments">
+         <vue-disqus :shortname="disqus_shortname" :identifier="post.fields.slug" :url="`${base_url}/posts/${post.fields.slug}`"></vue-disqus>
       </div>
-    </div>    
+      
+      <OtherPosts/>
 
-    <OtherPosts/>
-  </div>
+    </div>
 
+  </div> 
 
 </template>
 

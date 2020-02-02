@@ -46,7 +46,9 @@
   border-left: solid 6px #2d8fdd;/*左側の線*/
   background: #f1f8ff;/*背景色*/
   margin-bottom: 3px;/*下のバーとの余白*/
-   line-height: 1.5;
+  margin-left: 15px;
+  margin-right: 15px; 
+  line-height: 1.5;
   padding: 0.5em;
   list-style-type: none!important;/*ポチ消す*/
   }
