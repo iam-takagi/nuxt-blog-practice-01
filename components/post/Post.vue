@@ -6,6 +6,14 @@
       <Bodytext :post="post"/>
       <ShareButtons/>
       <JustComments/>
+
+      <div v-show="disqus_shortname">
+        <vue-disqus
+        :shortname="disqus_shortname"
+        :identifier="post.fields.slug"
+        :url="`${base_url}/posts/${post.fields.slug}`"
+        ></vue-disqus>
+      </div>
     </div>    
 
     <OtherPosts/>
@@ -18,11 +26,15 @@
     import Bodytext from "./Bodytext";
     import Headline from "./Headline";
     import OtherPosts from "./OtherPosts";
-    import JustComments from "./JustComments";
+
     export default {
         name: "Post",
-        components: {OtherPosts, Headline, Bodytext, JustComments},
-        props: ['post']
+        components: {OtherPosts, Headline, Bodytext},
+        props: ['post'],
+        data: () => ({
+          base_url: process.env.BASE_URL,
+          disqus_shortname: process.env.DISQUS_SHORTNAME
+        })
     }
 </script>
 

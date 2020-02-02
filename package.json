@@ -46,6 +46,7 @@
     "postcss-responsive-type": "^1.0.0",
     "style-loader": "^0.23.1",
     "tls": "0.0.1",
+    "vue-disqus": "^3.0.5",
     "vue-loader": "^15.6.1",
     "vue-material": "latest",
     "vue-style-loader": "^4.1.2",
