@@ -74,7 +74,7 @@ const config = {
     html: true, // HTML タグを有効にする
     linkify: true, // URLに似たテキストをリンクに自動変換する
     typography: true,  // 言語に依存しないきれいな 置換 + 引用符 を有効にします。
-    use: ['markdown-it-highlightjs', 'markdown-it-anchor', 'markdown-it-table-of-contents' ]
+    use: ['markdown-it-highlightjs', 'markdown-it-anchor', 'markdown-it-table-of-contents']
   },
   /*
   ** Nuxt.js dev-modules

@@ -568,13 +568,10 @@
 .markdown-body h4,
 .markdown-body h5,
 .markdown-body h6 {
-  
-  border-left: solid 6px #2d8fdd;/*左側の線*/
-  /* background: #f1f8ff;/*背景色*/
-  background: #edf2f7;
-  margin-bottom: 3px;/*下のバーとの余白*/
-  line-height: 1.5;
-  padding: 0.5em;
+  padding: 0.5em;/*文字周りの余白*/
+  color: #494949;/*文字色*/
+  background: #edf2f7;/*背景色*/
+  border-left: solid 5px #2d8fdd;/*左側の線*/
 }
 
 .markdown-body h1,
@@ -590,7 +587,7 @@
 }
 
 .markdown-body h1 {
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 .markdown-body h1,
