@@ -56,7 +56,7 @@ const config = {
   ** Global CSS
   */
   css: [
-    'highlight.js/styles/github.css'
+    'highlight.js/styles/agate.css'
   ],
   /*
   ** Plugins to load before mounting the App
