@@ -56,7 +56,7 @@ const config = {
   ** Global CSS
   */
   css: [
-    {src: 'prismjs/themes/prism-tomorrow.css'}
+    'highlight.js/styles/github.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -64,9 +64,18 @@ const config = {
   plugins: [
     '~/plugins/contentful',
     '~/plugins/moment-filter',
-    '~/plugins/markdown-it-plugin',
     '~/plugins/vue-material'
   ],
+
+  markdownit: {
+    preset: 'default',
+    injected: true, // $mdを利用してmarkdownをhtmlにレンダリングする
+    breaks: true, // 改行コードを<br>に変換する
+    html: true, // HTML タグを有効にする
+    linkify: true, // URLに似たテキストをリンクに自動変換する
+    typography: true,  // 言語に依存しないきれいな 置換 + 引用符 を有効にします。
+    use: ['markdown-it-highlightjs', 'markdown-it-anchor', 'markdown-it-table-of-contents' ]
+  },
   /*
   ** Nuxt.js dev-modules
   */
@@ -97,7 +106,8 @@ const config = {
     ['@nuxtjs/google-adsense', {
       id: 'ca-pub-7932483299460648'
     }],
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/markdownit'
   ],
 
   manifest: {
@@ -107,14 +117,6 @@ const config = {
     description: 'Minecraft Tech Portal JP',
     'og:description': 'Minecraft Tech Portal JP',
     lang: 'ja',
-  },
-
-  markdownit: {
-    injected: true, // $mdを利用してmarkdownをhtmlにレンダリングする
-    breaks: true, // 改行コードを<br>に変換する
-    html: true, // HTML タグを有効にする
-    linkify: true, // URLに似たテキストをリンクに自動変換する
-    typography: true,  // 言語に依存しないきれいな 置換 + 引用符 を有効にします。
   },
 
   fontawesome: {
